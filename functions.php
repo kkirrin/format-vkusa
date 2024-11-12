@@ -16,34 +16,16 @@ function theme_add_scripts()
 
 
 
-function add_menu()
-{
-    register_nav_menu('aside', 'Категории в sidebar');
-    register_nav_menu('lk', 'Навигация ЛК');
+
+
+if (class_exists('WooCommerce')) {
+    require_once(get_template_directory() . '/woocommerce.php');
 }
 
-add_action('init', 'create_new_type_posts');
 
-function create_new_type_posts()
+
+function mytheme_add_woocommerce_support()
 {
-    register_post_type(
-        'apartments',
-        array(
-            'public' => true,
-            'has_archive' => true,
-            'exclude_from_search' => true,
-            'rewrite' => array(
-                'slug' => 'trands',
-                'with_front' => false,
-            ),
-            'labels' => array(
-                'name' => 'Квартиры',
-                'singular_name' => 'Квартиры',
-                'menu_name' => 'Квартиры',
-                'all_items' => 'Все квартиры',
-            ),
-            'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes'),
-            'taxonomies' => array('category')
-        )
-    );
-};
+    add_theme_support('woocommerce');
+}
+add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
