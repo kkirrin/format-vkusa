@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="relative wrapper lock-padding">
+<body <?php body_class(); ?> class="relative wrapper lock-padding">
 
     <header class="container flex flex-col gap-[20px]">
         <div class="md:gap-5 items-center justify-between flex">
