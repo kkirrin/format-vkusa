@@ -34,11 +34,11 @@
             <div class="grid gap-[20px] md:grid-cols-6 sm:grid-cols-3 grid-cols-2 pt-[30px] md:pb-[110px] pb-[40px]">
                 <div class=" flex flex-col gap-[10px] relative">
                     <div class="h-full">
-                        <img class="w-full h-full object-contain" src="/imgs/recipe-1.png" alt="" />
+                        <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/recipe-1.png" alt="" />
                     </div>
                     <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
                         <div class="flex items-center justify-center gap-[5px]">
-                            <img src="/imgs/clock.svg" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/imgs/clock.svg" alt="">
                             <span class="text-white">25 минут</span>
                         </div>
                     </div>
@@ -50,11 +50,11 @@
                 </div>
                 <div class=" flex flex-col gap-[10px] relative">
                     <div class="h-full">
-                        <img class="w-full h-full object-contain" src="/imgs/recipe-2.png" alt="" />
+                        <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/recipe-2.png" alt="" />
                     </div>
                     <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
                         <div class="flex items-center justify-center gap-[5px]">
-                            <img src="/imgs/clock.svg" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/imgs/clock.svg" alt="">
                             <span class="text-white">25 минут</span>
                         </div>
                     </div>
@@ -66,11 +66,11 @@
                 </div>
                 <div class=" flex flex-col gap-[10px] relative">
                     <div class="h-full">
-                        <img class="w-full h-full object-contain" src="/imgs/recipe-3.png" alt="" />
+                        <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/recipe-3.png" alt="" />
                     </div>
                     <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
                         <div class="flex items-center justify-center gap-[5px]">
-                            <img src="/imgs/clock.svg" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/imgs/clock.svg" alt="">
                             <span class="text-white">25 минут</span>
                         </div>
                     </div>
@@ -82,11 +82,11 @@
                 </div>
                 <div class=" flex flex-col gap-[10px] relative">
                     <div class="h-full">
-                        <img class="w-full h-full object-contain" src="/imgs/recipe-1.png" alt="" />
+                        <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/recipe-1.png" alt="" />
                     </div>
                     <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
                         <div class="flex items-center justify-center gap-[5px]">
-                            <img src="/imgs/clock.svg" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/imgs/clock.svg" alt="">
                             <span class="text-white">25 минут</span>
                         </div>
                     </div>
@@ -98,11 +98,11 @@
                 </div>
                 <div class=" flex flex-col gap-[10px] relative">
                     <div class="h-full">
-                        <img class="w-full h-full object-contain" src="/imgs/recipe-2.png" alt="" />
+                        <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/recipe-2.png" alt="" />
                     </div>
                     <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
                         <div class="flex items-center justify-center gap-[5px]">
-                            <img src="/imgs/clock.svg" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/imgs/clock.svg" alt="">
                             <span class="text-white">25 минут</span>
                         </div>
                     </div>
@@ -114,11 +114,11 @@
                 </div>
                 <div class=" flex flex-col gap-[10px] relative">
                     <div class="h-full">
-                        <img class="w-full h-full object-contain" src="/imgs/recipe-3.png" alt="" />
+                        <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/recipe-3.png" alt="" />
                     </div>
                     <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
                         <div class="flex items-center justify-center gap-[5px]">
-                            <img src="/imgs/clock.svg" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/imgs/clock.svg" alt="">
                             <span class="text-white">25 минут</span>
                         </div>
                     </div>
@@ -130,11 +130,11 @@
                 </div>
                 <div class=" flex flex-col gap-[10px] relative">
                     <div class="h-full">
-                        <img class="w-full h-full object-contain" src="/imgs/recipe-1.png" alt="" />
+                        <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/recipe-1.png" alt="" />
                     </div>
                     <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
                         <div class="flex items-center justify-center gap-[5px]">
-                            <img src="/imgs/clock.svg" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/imgs/clock.svg" alt="">
                             <span class="text-white">25 минут</span>
                         </div>
                     </div>
@@ -146,11 +146,11 @@
                 </div>
                 <div class=" flex flex-col gap-[10px] relative">
                     <div class="h-full">
-                        <img class="w-full h-full object-contain" src="/imgs/recipe-2.png" alt="" />
+                        <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/recipe-2.png" alt="" />
                     </div>
                     <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
                         <div class="flex items-center justify-center gap-[5px]">
-                            <img src="/imgs/clock.svg" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/imgs/clock.svg" alt="">
                             <span class="text-white">25 минут</span>
                         </div>
                     </div>
@@ -162,11 +162,11 @@
                 </div>
                 <div class=" flex flex-col gap-[10px] relative">
                     <div class="h-full">
-                        <img class="w-full h-full object-contain" src="/imgs/recipe-3.png" alt="" />
+                        <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/recipe-3.png" alt="" />
                     </div>
                     <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
                         <div class="flex items-center justify-center gap-[5px]">
-                            <img src="/imgs/clock.svg" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/imgs/clock.svg" alt="">
                             <span class="text-white">25 минут</span>
                         </div>
                     </div>

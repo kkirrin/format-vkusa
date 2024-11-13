@@ -12,6 +12,17 @@
         <div class="container">
 
             <h1 class="hidden">заголовок</h1>
+
+            <?php
+            $args = array(
+                'post_type' => 'banners_on_main',
+                'posts_per_page' => -1,
+            );
+
+            $data = get_posts($args);
+
+
+            ?>
             <div class="main-swiper overflow-hidden">
                 <div class="main-item relative">
                     <div class="swiper-wrapper">

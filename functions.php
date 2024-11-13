@@ -22,9 +22,6 @@ function theme_add_scripts()
 }
 
 
-
-
-
 if (class_exists('WooCommerce')) {
     require_once(get_template_directory() . '/woocommerse.php');
 }
@@ -100,3 +97,31 @@ function ajax_live_search()
 
     wp_die(); // Завершение выполнения
 }
+
+
+
+add_action('init', 'create_news_type');
+
+function create_news_type()
+{
+    register_post_type(
+        'Баннеры на главной',
+        array(
+            'public' => true,
+            'has_archive' => true,
+            'exclude_from_search' => true,
+            'rewrite' => array(
+                'slug' => 'banners_on_main',
+                'with_front' => false,
+            ),
+            'labels' => array(
+                'name' => 'Баннеры на главной',
+                'singular_name' => 'Баннер на главной',
+                'menu_name' => 'Баннеры на главной',
+                'all_items' => 'Все Баннеры на главной',
+            ),
+            'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes'),
+            'taxonomies' => array('category')
+        )
+    );
+};

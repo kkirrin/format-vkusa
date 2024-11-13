@@ -3033,7 +3033,7 @@ body.masked {
 .nav-links ul li {
   transition: all 0.1s ease-in-out;
 }
-.nav-links ul li.first_item:hover ul.sub-menu {
+.nav-links ul li:hover ul.sub-menu {
   opacity: 1;
   visibility: visible;
 }

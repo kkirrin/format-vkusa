@@ -14,7 +14,7 @@
 
 </head>
 
-<body <?php body_class(); ?> class="relative wrapper lock-padding">
+<body <?php body_class('relative wrapper lock-padding'); ?>>
 
     <header class="container flex flex-col gap-[20px]">
         <div class="md:gap-5 items-center justify-between flex">
@@ -129,13 +129,6 @@
                                         <path d="M4.54492 16.9099L20.4548 1.00001" stroke="#000" />
                                     </svg>
                                 </button>
-                                <!-- <?php wp_nav_menu([
-                                            'theme_location' => 'lk',
-                                            'container' => '',
-                                            'menu_class' => 'lk-menu-list',
-                                            'menu_id' => ''
-                                        ]);
-                                        ?> -->
 
 
                                 <?php if (!is_user_logged_in()) {
@@ -293,24 +286,13 @@
 
         <div class="pt-[40px] justify-between items-center md:flex hidden ">
             <nav class="nav-links">
-                <ul class="flex gap-[30px] text-[18px]">
-                    <li class="first_item">
-                        <a href="">О компании</a>
-                    </li>
-                    <li class="first_item">
-                        <a href="">Покупателям</a>
-                        <ul class="sub-menu">
-                            <li><a href="">Реквизиты и контакты</a></li>
-                            <li><a href="">Рецепты</a></li>
-                        </ul>
-                    </li>
-                    <li class="first_item">
-                        <a href="">Магазины</a>
-                    </li>
-                    <li class="first_item">
-                        <a href="">Оптовикам</a>
-                    </li>
-                </ul>
+                <?php wp_nav_menu([
+                    'theme_location' => 'top-nav',
+                    'container' => 'ul',
+                    'menu_class' => 'flex gap-[30px] text-[18px]',
+                    'menu_id' => ''
+                ]);
+                ?>
             </nav>
 
             <ul class="items-center justify-center] gap-[30px] text-[18px] flex">
