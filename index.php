@@ -199,8 +199,6 @@
                 <div class="promotion-item relative">
                     <div class="swiper-wrapper">
 
-
-
                         <?php
 
                         $args = array(
