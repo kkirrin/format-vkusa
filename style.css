@@ -3263,3 +3263,42 @@ header .able.disabled {
     line-height: 1.25rem;
   }
 }
+
+
+.menu .menu__link {
+  position: relative;
+}
+
+.menu .menu__link::before {
+content: "";
+ position: absolute;
+ top: 50%;
+ right: 12px; 
+ transform: translateY(-50%) rotate(90deg); /* Center and rotate */
+ width: 10px; 
+ height: 10px;
+ background-image: url('/www/format-vkusa.ru/wp-content/themes/format-vkusa/imgs/arrow.png'); 
+ background-size: cover;
+ pointer-events: none; 
+
+}
+ 
+
+.menu .menu__link.active::before {
+    transform: rotate(-180deg); 
+  
+}
+
+.menu .menu__link .sub-menu {
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+
+.menu .menu__link .sub-menu.active {
+  opacity: 1;
+  display: block;
+  visibility: visible;
+}

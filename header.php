@@ -39,42 +39,56 @@
 
                         <div class="menu overflow-hidden ">
                             <ul class="flex flex-col">
-                                <li class="px-4 mb-4">
-                                    <a class="hover:text-green transition-colors" href="/">Тут категории</a>
-                                </li>
-                                <!-- <li class="px-4 mb-4">
-                                    <a class="hover:text-green transition-colors" href="/japancar/">Авто с аукционов Японии</a>
-                                </li>
-                                <li class="px-4 mb-4">
-                                    <a class="hover:text-green transition-colors" href="/%d0%b0%d0%b2%d1%82%d0%be-%d0%b8%d0%b7-%d0%ba%d0%be%d1%80%d0%b5%d0%b8/">Авто из Кореи</a>
-                                </li>
+                                <?php
+                                $categories = get_terms(array(
+                                    'taxonomy' => 'product_cat',
+                                    'orderby' => 'meta_value_num',
+                                    'order' => 'ASC',
+                                    'hide_empty' => false,
+                                    'parent' => 0,
+                                ));
 
-                                <li class="px-4 mb-4">
-                                    <a class="hover:text-green transition-colors" href="/%d0%b0%d0%b2%d1%82%d0%be-%d0%b2-%d0%bd%d0%b0%d0%bb%d0%b8%d1%87%d0%b8%d0%b8/">Авто в наличии</a>
-                                </li>
-                                <li class="px-4 mb-4">
+                                if (!is_wp_error($categories) && !empty($categories)):
+                                    foreach ($categories as $category):
+                                ?>
+                                        <li class="px-4 mb-4 menu__link">
+                                            <a href="<?php echo get_category_link($category->term_id); ?>" style="color: #262626; font-weight: 500;">
+                                                <?php echo esc_html($category->name); ?>
+                                            </a>
 
-                                    <a class="hover:text-green transition-colors" href="https://auc.avtopotencial-dv.ru">Онлайн-ауционы Японии</a>
-                                </li>
+                                            <?php
+                                            $sub_categories = get_terms(array(
+                                                'taxonomy' => 'product_cat',
+                                                'parent' => $category->term_id,
+                                                'orderby' => 'meta_value_num',
+                                                'order' => 'ASC',
+                                                'hide_empty' => false,
+                                            ));
 
-                                <li class="px-4 mb-4">
+                                            if (!is_wp_error($sub_categories) && !empty($sub_categories)):
+                                            ?>
+                                                <ul class="sub-menu pt-[20px]">
+                                                    <?php foreach ($sub_categories as $sub_category): ?>
+                                                        <li style="color: #8F8F8F;" class="pb-[10px]">
+                                                            <a href="<?php echo get_category_link($sub_category->term_id); ?>">
+                                                                <p><?php echo esc_html($sub_category->name); ?></p>
+                                                            </a>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            <?php endif; ?>
+                                        </li>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
 
-                                    <a class="hover:text-green transition-colors" href="https://www.dongchedi.com">Онлайн-ауционы Китая</a>
-                                </li>
-                                <li class="px-4 mb-4">
-
-                                    <a class="hover:text-green transition-colors" href="http://www.encar.com/index.do">Онлайн-ауционы Кореи</a>
-                                </li>
-                                <li class="px-4 mb-4">
-
-                                    <a class="hover:text-green transition-colors" href="https://www.youtube.com/channel/UCBKiXYVvi1ROscY2_ENwM-Q">Наш youtube-канал</a>
-                                </li> -->
                             </ul>
                         </div>
 
-                        <div class="w-full md:block hidden">
+                        <!-- <div class="w-full md:block hidden">
                             <input class="h-full w-full border bg-white pl-[20px]" placeholder="Поиск" />
-                        </div>
+                        </div> -->
+
+                        <?php include 'live-search.php'; ?>
                     </div>
 
                 </div>

@@ -54,21 +54,24 @@ const initNav = () => {
   });
   mobileMenuLinks.forEach((link) => {
     link.addEventListener("click", (evt) => {
+      evt.preventDefault();
       menuButton.classList.remove("active");
       menu.classList.remove("is-active");
       body.classList.remove("lock");
     });
   });
   mobileMenuButton.addEventListener("click", (evt) => {
+    evt.preventDefault();
     mobileMenuButton.classList.toggle("active");
     mobileMenu.classList.toggle("is-active");
     body.classList.toggle("lock");
   });
   menuLinks.forEach((link) => {
     link.addEventListener("click", (evt) => {
-      menuButton.classList.remove("active");
-      menu.classList.remove("is-active");
-      body.classList.remove("lock");
+      
+      // menuButton.classList.remove("active");
+      // menu.classList.remove("is-active");
+      // body.classList.remove("lock");
     });
   });
   mobileMenuCloseButton.addEventListener("click", (evt) => {
@@ -408,6 +411,39 @@ const initRecipesSlider = () => {
     });
   }
 };
+
+const initDropdown = () => { 
+  const menu_link = document.querySelectorAll('.menu__link');
+
+  menu_link.forEach((el) => {
+        const button = el.querySelector('a');
+        const content = el.querySelector('ul');
+    
+      
+
+        button.addEventListener('click', (evt) => {
+            if (evt.currentTarget.classList.contains('.active')) {
+                evt.currentTarget.classList.remove('.active');
+            }
+            if (content) { 
+                evt.preventDefault();
+    
+                const currentButton = evt.currentTarget;
+                currentButton.classList.toggle('active');
+                content.classList.toggle('active');
+                
+                if (currentButton.classList.contains('active')) {
+                    
+                    content.style.maxHeight = 'max-content';
+
+                } else {
+                    content.style.maxHeight = null;
+                }
+            }
+        });
+        
+    });
+}
 window.addEventListener("DOMContentLoaded", () => {
   console.log("подключен скрипт main.js");
   init();
@@ -416,6 +452,7 @@ window.addEventListener("DOMContentLoaded", () => {
   initModal();
   initPopup();
   initSlider();
+  initDropdown();
   initHeaderFix();
   initPopularSlider();
   initRecipesSlider();
