@@ -215,8 +215,9 @@
                                 $product = wc_get_product(get_the_ID());
 
                                 if ($product->is_on_sale()) {
-                                    $sale_price = $product->get_sale_price();
-                                    $regular_price = $product->get_regular_price();
+                                    $product_id =  $product;
+                                    $sale_price     = $product->get_sale_price();
+                                    $regular_price  = $product->get_regular_price();
                                     $discount_percentage = round((($regular_price - $sale_price) / $regular_price) * 100);
 
                                     $image_src = get_the_post_thumbnail_url(get_the_ID(), 'full');
@@ -237,7 +238,7 @@
                                     echo '   </div>';
                                     echo '   <div class="w-[129px] bg-lightGray p-[5px]">';
                                     echo '       <span class="font-bold">' . $sale_price . '</span>';
-                                    echo '       <button>+</button>';
+                                    echo '       <a href="?add-to-cart=' . $product_id . '" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-quantity="1" data-product_id="' . $product_id . '" data-product_sku="' . $product->get_sku() . '" aria-label="' . __('Добавить в корзину', 'domain') . '" rel="nofollow">Купить</a>';
                                     echo '   </div>';
                                     echo '</div>';
                                 }
