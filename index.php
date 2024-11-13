@@ -13,43 +13,43 @@
 
             <h1 class="hidden">заголовок</h1>
 
-            <?php
-            $args = array(
-                'post_type' => 'banners_on_main',
-                'posts_per_page' => -1,
-            );
-
-            $data = get_posts($args);
-
-
-            ?>
             <div class="main-swiper overflow-hidden">
                 <div class="main-item relative">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img class="w-full md:block sm:hidden hidden" src="<?php echo get_template_directory_uri(); ?>/imgs/banner_b.png" alt="">
-                            <img class="w-full md:hidden sm:block hidden" src="<?php echo get_template_directory_uri(); ?>/imgs/banner_m.png" alt="">
-                            <img class="w-full md:hidden sm:hidden block" src="<?php echo get_template_directory_uri(); ?>/imgs/banner_s.png" alt="">
-                        </div>
 
-                        <div class="swiper-slide">
-                            <img class="w-full md:block sm:hidden hidden" src="<?php echo get_template_directory_uri(); ?>/imgs/banner_b.png" alt="">
-                            <img class="w-full md:hidden sm:block hidden" src="<?php echo get_template_directory_uri(); ?>/imgs/banner_m.png" alt="">
-                            <img class="w-full md:hidden sm:hidden block" src="<?php echo get_template_directory_uri(); ?>/imgs/banner_s.png" alt="">
-                        </div>
+                        <?php
+                        $args = array(
+                            'post_type' => 'banners_on_main',
+                            'posts_per_page' => -1,
+                        );
 
-                        <div class="swiper-slide">
-                            <img class="w-full md:block sm:hidden hidden" src="<?php echo get_template_directory_uri(); ?>/imgs/banner_b.png" alt="">
-                            <img class="w-full md:hidden sm:block hidden" src="<?php echo get_template_directory_uri(); ?>/imgs/banner_m.png" alt="">
-                            <img class="w-full md:hidden sm:hidden block" src="<?php echo get_template_directory_uri(); ?>/imgs/banner_s.png" alt="">
-                        </div>
+                        $data = get_posts($args);
 
+                        foreach ($data as $post):
+                            setup_postdata($post);
 
+                            $img1 = get_field('banner_1');
+                            $img2 = get_field('banner_2');
+                            $img3 = get_field('banner_3');
+
+                            $img_url_1 = esc_url($img1['url']);
+                            $img_url_2 = esc_url($img2['url']);
+                            $img_url_3 = esc_url($img3['url']);
+
+                            echo  ' <div class="swiper-slide">';
+                            echo '     <img class="w-full md:block sm:hidden hidden" src="' . $img_url_1 . '" alt="">';
+                            echo '     <img class="w-full md:hidden sm:block hidden" src="' . $img_url_2 . '" alt="">';
+                            echo '     <img class="w-full md:hidden sm:hidden block" src="' . $img_url_3 . '" alt="">';
+                            echo ' </div>';
+                        ?>
+
+                        <?php
+                        endforeach;
+
+                        ?>
                     </div>
-                    <div class="swiper-pagination"></div>
                 </div>
             </div>
-        </div>
     </section>
 
     <section id="popular">

@@ -100,12 +100,12 @@ function ajax_live_search()
 
 
 
-add_action('init', 'create_news_type');
+add_action('init', 'create_new_type');
 
-function create_news_type()
+function create_new_type()
 {
     register_post_type(
-        'Баннеры на главной',
+        'banners_on_main',
         array(
             'public' => true,
             'has_archive' => true,
