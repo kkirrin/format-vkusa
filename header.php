@@ -88,7 +88,10 @@
                             <input class="h-full w-full border bg-white pl-[20px]" placeholder="Поиск" />
                         </div> -->
 
-                        <?php include 'live-search.php'; ?>
+
+                        <div class="w-full md:flex hidden">
+                            <?php include 'live-search.php'; ?>
+                        </div>
                     </div>
 
                 </div>
@@ -102,9 +105,9 @@
                     </svg>
 
                     <select class="bg-white" name="" id="">
-                        <option value="">Все авто</option>
-                        <option value="">Все авто</option>
-                        <option value="">Категории</option>
+                        <option value="">Нижнепортовая 6Г</option>
+                        <option value="">Маковского 262</option>
+                        <option value="">Трамвайная 14В</option>
                     </select>
                 </div>
 
@@ -134,21 +137,17 @@
                                         ]);
                                         ?> -->
 
-                                <!-- 
-                                    <?php if (!is_user_logged_in()) {
 
-                                        echo '  <a href="popup1" class=" popup-link">Войти</a>';
-                                        echo '  <a href="popup2" class=" popup-link">Зарегистрироваться</a>';
-                                    } else {
-                                        echo '  <a href="/?page_id=825" class="">Личный кабинет</a>';
-                                        echo '  <a href="/?page_id=32" class="">Корзина</a>';
-                                        echo '  <a href="/?page_id=31" class="">Магазин</a>';
-                                        echo '  <a href="/?page_id=25">Выйти</a>';
-                                    }
-                                    ?> -->
+                                <?php if (!is_user_logged_in()) {
 
-                                <a href="">Вход</a>
-                                <a href="">Регистрация</a>
+                                    echo '  <a href="popup2" class=" popup-link">Авторизация</a>';
+                                    echo '  <a href="popup3" class=" popup-link">Зарегистрироваться</a>';
+                                } else {
+                                    echo '  <a href="/my-account" class="">Личный кабинет</a>';
+                                    echo '  <a href="/cart" class="">Корзина</a>';
+                                    echo '  <a href="/logout">Выйти</a>';
+                                }
+                                ?>
                             </div>
 
                         </div>
@@ -284,12 +283,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-                <!-- Мобильная кнопка -->
-
-
             </div>
 
 
@@ -325,7 +318,7 @@
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M19.6343 17.5921C19.5015 17.7244 19.3413 17.8937 19.1715 18.0728C18.7478 18.5225 18.2184 19.0816 17.8866 19.3083C16.1409 20.5012 13.8054 19.9304 12.1534 19.2421C9.97418 18.3341 7.60156 16.6604 5.47121 14.5298C3.33887 12.399 1.66535 10.0257 0.757342 7.84765C0.0698416 6.19531 -0.502151 3.85937 0.690935 2.11328C0.917498 1.78125 1.47785 1.25269 1.92699 0.828121C2.10668 0.658824 2.27465 0.498863 2.40746 0.36648C2.64325 0.131862 2.96235 0.000152588 3.29498 0.000152588C3.62761 0.000152588 3.94671 0.131862 4.1825 0.36648L7.39453 3.57757C7.62902 3.81335 7.76065 4.13237 7.76065 4.4649C7.76065 4.79743 7.62902 5.11644 7.39453 5.35222L6.51953 6.22546C6.22731 6.51555 6.03657 6.89223 5.97569 7.29946C5.91482 7.70669 5.98706 8.12269 6.18168 8.48554C7.38518 10.757 9.24318 12.6147 11.5149 13.8178C11.8777 14.0124 12.2936 14.0846 12.7007 14.0236C13.1078 13.9626 13.4843 13.7717 13.7742 13.4795L14.647 12.6062C14.8828 12.3715 15.2019 12.2398 15.5345 12.2398C15.8672 12.2398 16.1863 12.3715 16.4221 12.6062L19.6343 15.8178C19.8688 16.0535 20.0004 16.3725 20.0004 16.7049C20.0004 17.0374 19.8688 17.3564 19.6343 17.5921Z" fill="#262626" />
                         </svg>
 
-                        <span class="font-bold">+7 900 000 00 00</span>
+                        <span class="font-bold">+7 924 327 44 44</span>
                     </a>
                 </li>
 
@@ -431,8 +424,9 @@
 
         </div>
 
-        <div class="w-full md:hidden block">
-            <input class="h-[50px] w-full border bg-white pl-[20px]" placeholder="Поиск" />
+        <div class="w-full md:hidden block h-[50px] w-full bg-white">
+            <?php include 'live-search.php'; ?>
+
         </div>
     </header>
 

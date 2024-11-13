@@ -3302,3 +3302,136 @@ content: "";
   display: block;
   visibility: visible;
 }
+
+
+
+
+
+
+
+/*  Стили живого поиска */
+
+.live_search::before {
+  content: " ";
+  width: 2px;
+  height: 45px;
+  right: 40px;
+  position: absolute;
+}
+
+@media screen and (max-width: 480px) {
+  .live_search::before {
+    display: none;
+    opacity: 0;
+  }
+
+  .search_button {
+    display: none;
+    opacity: 0;
+  }
+}
+
+.live_search labelloaded {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.live_search label>input[type="text"] {
+  background-color: var(--white);
+  width: 100%;
+  border-radius: 0px;
+  margin: 0px;
+  outline: none;
+}
+
+.live_search .search_list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  margin-top: 25px;
+  z-index: 10001;
+  width: 100%;
+  max-height: calc(10 * 30px);
+  border-top: none;
+  /* padding: 40px; */
+  border-radius: 15px;
+  overflow-y: auto;
+  transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out !important;
+  background-color: var(--white);
+    box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+
+
+
+}
+
+.live_search .search_list .list_option {
+  display: flex;
+  gap: 10px;
+  padding: 0px 8px 0px;
+  line-height: 30px;
+  background-color: var(--white);
+}
+
+
+.live_search .search_list .list_option img {
+  min-width: 100px;
+  min-height: 100px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.live_search .search_list>.list_option:hover {
+  cursor: pointer;
+  background-color: #dbdbdb;
+}
+
+
+@media screen and (max-width: 480px) {
+  .live_search .search_list {
+    padding: 20px;
+  }
+
+  .live_search {
+    position: inherit !important;
+    gap: 40px;
+    border-radius: 5px;
+    width: -webkit-fill-available;
+    background-color: #E9E9E9;
+  }
+
+  .live_search label>input[type="text"] {
+    background-color: var(--white);
+  }
+}
+
+
+
+.download {
+  overflow: hidden;
+}
+
+.download>div,
+.download>span {
+  background-image: url('/imgs/download.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation-name: anim_rotation;
+  animation-duration: 600ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(12, start);
+}
+
+@keyframes anim_rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
