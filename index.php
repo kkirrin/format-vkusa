@@ -107,11 +107,13 @@
                         $args = array(
                             'post_type' => 'product',
                             'posts_per_page' => -1,
+
+                            // Вызов через галочку
                             'tax_query' => array(
                                 array(
-                                    'taxonomy' => 'product_tag',
-                                    'field' => 'slug',
-                                    'terms' => 'popular_pr',
+                                    'taxonomy' => 'product_visibility',
+                                    'field'    => 'name',
+                                    'terms'    => 'featured',
                                 ),
                             ),
                         );
