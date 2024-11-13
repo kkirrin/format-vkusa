@@ -198,153 +198,57 @@
             <div class="swiper-promotion overflow-hidden relative">
                 <div class="promotion-item relative">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide flex flex-col gap-[10px] relative">
-                            <div class="h-full bg-white">
-                                <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/popular-p-1.png" alt="" />
-                                <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
-                                    <div class="flex items-center justify-center gap-[5px]">
-                                        <span class="text-white"> — 25 %</span>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div>
-                                <span class="text-[16px]">
-                                    Лапша органическая рисовая Коричневый рис BIO, Perfect Earth, 225г Таиланд
-                                </span>
-                            </div>
 
-                            <div class="w-[129px] bg-lightGray p-[5px]">
-                                <span class="font-bold">100</span>
-                                <button>+</button>
-                            </div>
-                        </div>
-                        <div class="swiper-slide flex flex-col gap-[10px] relative">
-                            <div class="h-full bg-white">
-                                <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/popular-p-2.png" alt="" />
-                                <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
-                                    <div class="flex items-center justify-center gap-[5px]">
-                                        <span class="text-white"> — 25 %</span>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div>
-                                <span class="text-[16px]">
-                                    Лапша органическая рисовая Коричневый рис BIO, Perfect Earth, 225г Таиланд
-                                </span>
-                            </div>
+                        <?php
 
-                            <div class="w-[129px] bg-lightGray p-[5px]">
-                                <span class="font-bold">100</span>
-                                <button>+</button>
-                            </div>
-                        </div>
-                        <div class="swiper-slide flex flex-col gap-[10px] relative">
-                            <div class="h-full bg-white">
-                                <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/popular-p-3.png" alt="" />
-                                <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
-                                    <div class="flex items-center justify-center gap-[5px]">
-                                        <span class="text-white"> — 25 %</span>
-                                    </div>
-                                </div>
-                            </div>
+                        $args = array(
+                            'post_type' => 'product',
+                            'posts_per_page' => -1,
+                        );
 
-                            <div>
-                                <span class="text-[16px]">
-                                    Лапша органическая рисовая Коричневый рис BIO, Perfect Earth, 225г Таиланд
-                                </span>
-                            </div>
+                        $sale_products = new WP_Query($args);
 
-                            <div class="w-[129px] bg-lightGray p-[5px]">
-                                <span class="font-bold">100</span>
-                                <button>+</button>
-                            </div>
-                        </div>
-                        <div class="swiper-slide flex flex-col gap-[10px] relative">
-                            <div class="h-full bg-white">
-                                <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/popular-p-1.png" alt="" />
-                                <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
-                                    <div class="flex items-center justify-center gap-[5px]">
-                                        <span class="text-white"> — 25 %</span>
-                                    </div>
-                                </div>
-                            </div>
+                        if ($sale_products->have_posts()) :
+                            while ($sale_products->have_posts()) : $sale_products->the_post();
+                                $product = wc_get_product(get_the_ID());
 
-                            <div>
-                                <span class="text-[16px]">
-                                    Лапша органическая рисовая Коричневый рис BIO, Perfect Earth, 225г Таиланд
-                                </span>
-                            </div>
+                                if ($product->is_on_sale()) {
+                                    $sale_price = $product->get_sale_price();
+                                    $regular_price = $product->get_regular_price();
+                                    $discount_percentage = round((($regular_price - $sale_price) / $regular_price) * 100);
 
-                            <div class="w-[129px] bg-lightGray p-[5px]">
-                                <span class="font-bold">100</span>
-                                <button>+</button>
-                            </div>
-                        </div>
-                        <div class="swiper-slide flex flex-col gap-[10px] relative">
-                            <div class="h-full bg-white">
-                                <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/popular-p-2.png" alt="" />
-                                <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
-                                    <div class="flex items-center justify-center gap-[5px]">
-                                        <span class="text-white"> — 25 %</span>
-                                    </div>
-                                </div>
-                            </div>
+                                    $image_src = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
-                            <div>
-                                <span class="text-[16px]">
-                                    Лапша органическая рисовая Коричневый рис BIO, Perfect Earth, 225г Таиланд
-                                </span>
-                            </div>
+                                    echo '<div class="swiper-slide flex flex-col gap-[10px] relative">';
+                                    echo '   <div class="h-full bg-white">';
+                                    echo '      <img class="w-full h-full object-contain" src="' . $image_src . '" alt="' . $product->get_name() . '" />';
+                                    echo '      <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">';
+                                    echo '          <div class="flex items-center justify-center gap-[5px]">';
+                                    echo '               <span class="text-white"> — ' . $discount_percentage . ' %</span>';
+                                    echo '           </div>';
+                                    echo '      </div>';
+                                    echo '   </div>';
+                                    echo '   <div>';
+                                    echo '      <span class="text-[16px]">';
+                                    echo '        ' . $product->get_name();
+                                    echo '      </span>';
+                                    echo '   </div>';
+                                    echo '   <div class="w-[129px] bg-lightGray p-[5px]">';
+                                    echo '       <span class="font-bold">' . $sale_price . '</span>';
+                                    echo '       <button>+</button>';
+                                    echo '   </div>';
+                                    echo '</div>';
+                                }
+                            endwhile;
+                            wp_reset_postdata();
+                        else :
+                            echo 'No products found.';
+                        endif;
+                        ?>
 
-                            <div class="w-[129px] bg-lightGray p-[5px]">
-                                <span class="font-bold">100</span>
-                                <button>+</button>
-                            </div>
-                        </div>
-                        <div class="swiper-slide flex flex-col gap-[10px] relative">
-                            <div class="h-full bg-white">
-                                <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/popular-p-3.png" alt="" />
-                                <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
-                                    <div class="flex items-center justify-center gap-[5px]">
-                                        <span class="text-white"> — 25 %</span>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div>
-                                <span class="text-[16px]">
-                                    Лапша органическая рисовая Коричневый рис BIO, Perfect Earth, 225г Таиланд
-                                </span>
-                            </div>
-
-                            <div class="w-[129px] bg-lightGray p-[5px]">
-                                <span class="font-bold">100</span>
-                                <button>+</button>
-                            </div>
-                        </div>
-                        <div class="swiper-slide flex flex-col gap-[10px] relative">
-                            <div class="h-full bg-white">
-                                <img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri(); ?>/imgs/popular-p-1.png" alt="" />
-                                <div class="absolute top-[10px] left-[10px] bg-defaultBlack p-[5px] rounded-[6px]">
-                                    <div class="flex items-center justify-center gap-[5px]">
-                                        <span class="text-white"> — 25 %</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="text-[16px]">
-                                    Лапша органическая рисовая Коричневый рис BIO, Perfect Earth, 225г Таиланд
-                                </span>
-                            </div>
-
-                            <div class="w-[129px] bg-lightGray p-[5px]">
-                                <span class="font-bold">100</span>
-                                <button>+</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
