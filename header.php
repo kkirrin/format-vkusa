@@ -40,6 +40,9 @@
                         <div class="menu overflow-hidden ">
                             <ul class="flex flex-col">
                                 <li class="px-4 mb-4">
+                                    <a class="hover:text-green transition-colors" href="/">Тут категории</a>
+                                </li>
+                                <!-- <li class="px-4 mb-4">
                                     <a class="hover:text-green transition-colors" href="/japancar/">Авто с аукционов Японии</a>
                                 </li>
                                 <li class="px-4 mb-4">
@@ -65,7 +68,7 @@
                                 <li class="px-4 mb-4">
 
                                     <a class="hover:text-green transition-colors" href="https://www.youtube.com/channel/UCBKiXYVvi1ROscY2_ENwM-Q">Наш youtube-канал</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
 
