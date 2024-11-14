@@ -3525,3 +3525,11 @@ content: "";
 .woocommerce-privacy-policy-text p {
   display: none !important;
 }
+
+.um:not(.um-admin) {
+  opacity: 1 !important;
+}
+
+.woocommerce-ordering > * {
+  background: inherit !important;
+}
