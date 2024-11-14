@@ -240,20 +240,6 @@ const initPopup = () => {
     }
   })();
 };
-const initHeaderFix = () => {
-  const header = document.querySelector("header .fixed");
-  const clearDiv = document.querySelector("header .able");
-  // window.addEventListener("scroll", () => {
-  //   let scrollTop = window.scrollY;
-  //   if (scrollTop >= 50) {
-  //     header.classList.add("header-fix");
-  //     clearDiv.classList.add("disabled");
-  //   } else {
-  //     header.classList.remove("header-fix");
-  //     clearDiv.classList.remove("disabled");
-  //   }
-  // });
-};
 const initSlider = () => {
   const item = document.querySelector(".main-item");
   if (item) {
@@ -623,21 +609,6 @@ jQuery(document).on('ready', function() {
         .on('click', '.search_list > .list_option', set_option);
 });
 
-
-const initShowCheckout  = () => {
-  // const showCheckoutBtn = document.querySelector('.custom_checkout_btn');
-
-
-  // if (showCheckoutBtn) {
-    
-  //   showCheckoutBtn.addEventListener('click', (e) => {
-  //     const showCheckoutContent = document.querySelector('.custom_checkout_content');
-  //     showCheckoutContent.classList.toggle('active');
-  //   });
-  // }
-};
-
-
 window.addEventListener("DOMContentLoaded", () => {
   console.log("подключен скрипт main.js");
   init();
@@ -647,8 +618,8 @@ window.addEventListener("DOMContentLoaded", () => {
   initPopup();
   initSlider();
   initDropdown();
-  initHeaderFix();
-  initShowCheckout();
+  // initHeaderFix();
+  // initShowCheckout();
   initPopularSlider();
   initRecipesSlider();
   initPromotionSlider();
