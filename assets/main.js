@@ -115,22 +115,22 @@ const initModal = () => {
       const currentBtn = e.currentTarget;
       const modalWrapper = currentBtn.closest(".modal_wrapper");
       const modalContent = modalWrapper.querySelector(".modal_content");
+      const modalClose = modalContent.querySelector(".btn_close");
       if (modalContent.classList.contains("is-active")) {
         return;
       } else {
         modalContent.classList.add("is-active");
         mask.classList.add("is-active");
       }
-    });
-  });
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".modal") && !event.target.closest(".modal_btn")) {
-      const modalContent = document.querySelectorAll(".modal_content");
-      modalContent.forEach((content) => {
-        content.classList.remove("is-active");
+      modalClose.addEventListener('click', (e) => { 
+        modalContent.classList.remove("is-active");
+        mask.classList.remove("is-active");
+      })
+      mask.addEventListener('click', (e) => { 
+        modalContent.classList.remove("is-active");
+        mask.classList.remove("is-active");
       });
-      mask.classList.remove("is-active");
-    }
+    });
   });
 };
 const initPopup = () => {

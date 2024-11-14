@@ -2936,6 +2936,11 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+
+.line-through {
+  text-decoration: line-through;
+}
+
 @font-face {
   font-family: "Roboto";
   src: url("/fonts/Roboto-Regular.ttf");
@@ -3073,10 +3078,7 @@ body.masked {
 }
 #promotion {
   padding: 90px 0 110px 0;
-  background-image: url("https://format-vkusa.ru/www/formta_vkusa.ru/wp-content/themes/format-vkusa/imgs/popular-banner.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: auto;
+
 }
 #category-1 {
   padding: 90px 0;
@@ -3434,4 +3436,10 @@ content: "";
   100% {
     transform: rotate(360deg);
   }
+}
+
+
+.btn__plus div{
+  color: var(--black) ;
+  scale: 2;
 }

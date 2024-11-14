@@ -246,7 +246,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/scroll-animation.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/smoothscroll.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/swiper-bundle.min.js"></script>
-
+<script src="<?php echo get_template_directory_uri(); ?>/assets/custom-cart.js"></script>
 
 </body>
 

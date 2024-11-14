@@ -154,8 +154,8 @@
     </section>
 
 
-    <section id="promotion">
-        <div class="container relative">
+    <section id="promotion" style="background-image: url(<?php echo get_template_directory_uri(); ?>/imgs/popular-banner.png); background-position: center; background-repeat: no-repeat; background-size: auto">
+        <div class=" container relative">
 
             <div class="flex justify-between md:items-center items-start md:flex-row flex-col gap-[20px] md:pb-[40px] pb-[30px]">
                 <div>
@@ -215,9 +215,10 @@
                                 $product = wc_get_product(get_the_ID());
 
                                 if ($product->is_on_sale()) {
-                                    $product_id =  $product;
-                                    $sale_price     = $product->get_sale_price();
-                                    $regular_price  = $product->get_regular_price();
+                                    $product_id     =   $product->get_id();
+                                    $sale_price     =   $product->get_sale_price();
+                                    $regular_price  =   $product->get_regular_price();
+
                                     $discount_percentage = round((($regular_price - $sale_price) / $regular_price) * 100);
 
                                     $image_src = get_the_post_thumbnail_url(get_the_ID(), 'full');
@@ -236,9 +237,10 @@
                                     echo '        ' . $product->get_name();
                                     echo '      </span>';
                                     echo '   </div>';
-                                    echo '   <div class="w-[129px] bg-lightGray p-[5px]">';
-                                    echo '       <span class="font-bold">' . $sale_price . '</span>';
-                                    echo '       <a href="?add-to-cart=' . $product_id . '" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-quantity="1" data-product_id="' . $product_id . '" data-product_sku="' . $product->get_sku() . '" aria-label="' . __('Добавить в корзину', 'domain') . '" rel="nofollow">Купить</a>';
+                                    echo '   <div class="w-[129px] bg-lightGray p-[5px] flex gap-[10px]">';
+                                    echo '       <span class="font-bold line-through" style="color: #a4a4a4; ">' . number_format((int) $product->regular_price) . '</span>';
+                                    echo '       <span class="font-bold text-defaultBlack">' . $sale_price . '&nbsp;₽</span>';
+                                    echo '       <a href="?add-to-cart=' . $product_id . '" class="button product_type_simple add_to_cart_button ajax_add_to_cart btn__plus" data-quantity="1" data-product_id="' . $product_id . '" data-product_sku="' . $product->get_sku() . '" aria-label="' . __('Добавить в корзину', 'domain') . '" rel="nofollow"><div>+</div></a>';
                                     echo '   </div>';
                                     echo '</div>';
                                 }

@@ -12,8 +12,6 @@ add_action('after_setup_theme', 'add_menu');
 function add_menu()
 {
     register_nav_menu('top-nav', 'навигация вверху');
-    // register_nav_menu('top-right', 'правое меню шапки');
-    // register_nav_menu('menu-catalog', 'меню-каталога');
 }
 
 function theme_add_scripts()
