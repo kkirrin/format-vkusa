@@ -460,6 +460,10 @@
     <section id="category-1">
         <div class="container relative">
             <h2 class="font-bold md:text-[55px] text-[28px] uppercase">
+
+                <?php
+
+                ?>
                 Молоко, яйца, сыр
             </h2>
 
@@ -511,8 +515,6 @@
         </div>
 
     </section>
-
-
 
     <section id="category-2">
         <div class="container relative">

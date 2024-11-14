@@ -30,9 +30,6 @@ if (class_exists('WooCommerce')) {
 
 
 
-
-
-
 //  Функция обработки ajax-запроса из живого поиска
 add_action('wp_ajax_live_search', 'ajax_live_search');
 add_action('wp_ajax_nopriv_live_search', 'ajax_live_search'); // Для незарегистрированных пользователей

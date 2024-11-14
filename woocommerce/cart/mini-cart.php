@@ -24,7 +24,9 @@ do_action('woocommerce_before_mini_cart'); ?>
 
 <?php if (! WC()->cart->is_empty()) : ?>
 
-	<ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>">
+	<ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr($args['list_class']);
+																	?>">
+		<!-- <ul class="woocommerce-mini-cart cart_list product_list_widget "> -->
 		<?php
 		do_action('woocommerce_before_mini_cart_contents');
 
@@ -90,15 +92,71 @@ do_action('woocommerce_before_mini_cart'); ?>
 		 *
 		 * @hooked woocommerce_widget_shopping_cart_subtotal - 10
 		 */
-		do_action('woocommerce_widget_shopping_cart_total');
+
+		//  ОТКЛЮЧАЕМ ВЫВОД СУММЫ !!!!!!!!!!!!!!!!!
+		// do_action('woocommerce_widget_shopping_cart_total');
 		?>
 	</p>
 
 	<?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>
 
-	<p class="woocommerce-mini-cart__buttons buttons"><?php do_action('woocommerce_widget_shopping_cart_buttons'); ?></p>
+	<!-- ОТКЛЮЧАЕМ ВЫВОД КНОПОК ПЕРЕХОДА !!!!!!!!!!!!!!! -->
+	<!-- <p class="woocommerce-mini-cart__buttons buttons"><?php do_action('woocommerce_widget_shopping_cart_buttons'); ?></p> -->
 
 	<?php do_action('woocommerce_widget_shopping_cart_after_buttons'); ?>
+
+
+	<!-- ВЫЗЫВАЕМ CHECKOUT !!!!!!!!!!!!!!! -->
+
+	<?php
+	/**
+	 * Cart collaterals hook.
+	 *
+	 * @hooked woocommerce_cross_sell_display
+	 * @hooked woocommerce_cart_totals - 10
+	 */
+	// do_action('woocommerce_cart_collaterals');
+	do_action('woocommerce_before_checkout_form');
+	?>
+
+	<div class="flex flex-col gap-[30px] custom_checkout_wrapper">
+		<!-- <button class="custom_checkout_btn">
+			Оформить
+		</button> -->
+
+		<form name="checkout" method="post" class="checkout woocommerce-checkout custom_checkout_content" action="<?php echo esc_url(wc_get_checkout_url()); ?>" enctype="multipart/form-data">
+
+			<?php do_action('woocommerce_checkout_before_customer_details'); ?>
+
+
+			<h3 class="text-medium text-[20px]">Оформление</h3>
+
+			<p class="text-darkGray text-[16px]">
+
+				Введите свои контактные данные, чтобы наш менеджер связался с вами и утвердил заказ
+			</p>
+			<div class="col2-set" id="customer_details">
+				<div class="col-1">
+					<?php do_action('woocommerce_checkout_billing'); ?>
+				</div>
+
+				<div class="col-2">
+					<?php //  do_action('woocommerce_checkout_shipping'); 
+					?>
+				</div>
+			</div>
+
+			<?php do_action('woocommerce_checkout_before_order_review'); ?>
+
+			<div id="order_review" class="woocommerce-checkout-review-order">
+				<?php do_action('woocommerce_checkout_order_review'); ?>
+			</div>
+
+			<?php do_action('woocommerce_checkout_after_order_review'); ?>
+
+
+		</form>
+	</div>
 
 <?php else : ?>
 

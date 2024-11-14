@@ -3443,3 +3443,85 @@ content: "";
   color: var(--black) ;
   scale: 2;
 }
+
+
+
+
+.custom_checkout_btn {
+  padding: 10px;
+  background: var(--default-black) !important;
+  color: var(--white) !important;
+  text-align: center !important;
+  width: -webkit-fill-available !important;
+}
+
+.checkout-button.button.alt.wc-forward {
+  background: inherit !important;
+}
+
+
+.woocommerce-billing-fields__field-wrapper input {
+  background: var(--white) !important;
+}
+
+
+.shop_table.woocommerce-checkout-review-order-table {
+  display: none !important;
+}
+
+.custom_checkout_content {
+  /* display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s ease-in-out; */
+}
+
+.custom_checkout_content.active {
+  /* opacity: 1;
+  visibility: visible; */
+}
+
+.custom_checkout_wrapper {
+  width: 100%;
+}
+
+
+.woocommerce-checkout-review-order .form-row.place-order button {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background: var(--default-black) !important;
+  margin-top: 10px;
+  padding: 10px;
+  color: var(--white);
+}
+
+
+.woocommerce-billing-fields__field-wrapper p {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+
+}
+
+.woocommerce-billing-fields__field-wrapper input {
+  border: 1px solid var(--light-gray);
+  padding: 10px;
+}
+
+/* .woocommerce-billing-fields__field-wrapper input {
+  margin-top: 5px;
+} */
+
+.woocommerce-billing-fields h3 {
+  display: none !important;
+}
+
+.woocommerce-additional-fields h3 {
+  margin-bottom: 10px;
+}
+
+.woocommerce-privacy-policy-text p {
+  display: none !important;
+}
