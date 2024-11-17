@@ -182,80 +182,15 @@
                                 <p class="font-bold">Корзина</p>
 
                                 <div class="flex flex-col gap-[20] cart_products">
-                                    <div class="product">
-                                        <div class="flex flex-row gap-[20px]">
-                                            <div>
-                                                <img src="/imgs/product.png" alt="">
-                                            </div>
 
-                                            <div class="flex flex-col h-full">
-                                                <span>Блины с ветчиной и сыром замороженные, Раут, 400г</span>
-                                                <div>- 10 +</div>
-                                            </div>
+                                    <?php the_widget('WC_Widget_Cart', 'title=') ?>
 
-                                            <div>
-                                                <div class="flex flex-col">
-                                                    <span>
-                                                        400р
-                                                    </span>
+                                    <?php
 
-                                                    <span>
-                                                        Удалить
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    $args = array();
 
-                                    <div class="product">
-                                        <div class="flex flex-row gap-[20px]">
-                                            <div>
-                                                <img src="/imgs/product.png" alt="">
-                                            </div>
-
-                                            <div class="flex flex-col h-full">
-                                                <span>Блины с ветчиной и сыром замороженные, Раут, 400г</span>
-                                                <div>- 10 +</div>
-                                            </div>
-
-                                            <div>
-                                                <div class="flex flex-col">
-                                                    <span>
-                                                        400р
-                                                    </span>
-
-                                                    <span>
-                                                        Удалить
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="product">
-                                        <div class="flex flex-row gap-[20px]">
-                                            <div>
-                                                <img src="/imgs/product.png" alt="">
-                                            </div>
-
-                                            <div class="flex flex-col h-full">
-                                                <span>Блины с ветчиной и сыром замороженные, Раут, 400г</span>
-                                                <div>- 10 +</div>
-                                            </div>
-
-                                            <div>
-                                                <div class="flex flex-col">
-                                                    <span>
-                                                        400р
-                                                    </span>
-
-                                                    <span>
-                                                        Удалить
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    wc_get_template('cart/mini-cart.php', $args);
+                                    ?>
                                 </div>
                             </div>
                         </div>
