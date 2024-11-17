@@ -182,15 +182,80 @@
                                 <p class="font-bold">Корзина</p>
 
                                 <div class="flex flex-col gap-[20] cart_products">
+                                    <div class="product">
+                                        <div class="flex flex-row gap-[20px]">
+                                            <div>
+                                                <img src="/imgs/product.png" alt="">
+                                            </div>
 
-                                    <?php the_widget('WC_Widget_Cart', 'title=') ?>
+                                            <div class="flex flex-col h-full">
+                                                <span>Блины с ветчиной и сыром замороженные, Раут, 400г</span>
+                                                <div>- 10 +</div>
+                                            </div>
 
-                                    <?php
+                                            <div>
+                                                <div class="flex flex-col">
+                                                    <span>
+                                                        400р
+                                                    </span>
 
-                                    $args = array();
+                                                    <span>
+                                                        Удалить
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                    wc_get_template('cart/mini-cart.php', $args);
-                                    ?>
+                                    <div class="product">
+                                        <div class="flex flex-row gap-[20px]">
+                                            <div>
+                                                <img src="/imgs/product.png" alt="">
+                                            </div>
+
+                                            <div class="flex flex-col h-full">
+                                                <span>Блины с ветчиной и сыром замороженные, Раут, 400г</span>
+                                                <div>- 10 +</div>
+                                            </div>
+
+                                            <div>
+                                                <div class="flex flex-col">
+                                                    <span>
+                                                        400р
+                                                    </span>
+
+                                                    <span>
+                                                        Удалить
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="product">
+                                        <div class="flex flex-row gap-[20px]">
+                                            <div>
+                                                <img src="/imgs/product.png" alt="">
+                                            </div>
+
+                                            <div class="flex flex-col h-full">
+                                                <span>Блины с ветчиной и сыром замороженные, Раут, 400г</span>
+                                                <div>- 10 +</div>
+                                            </div>
+
+                                            <div>
+                                                <div class="flex flex-col">
+                                                    <span>
+                                                        400р
+                                                    </span>
+
+                                                    <span>
+                                                        Удалить
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
