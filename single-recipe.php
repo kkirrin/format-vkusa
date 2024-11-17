@@ -1,8 +1,11 @@
 <?php
 /*
     Template Name: карточка рецепта
+    Template Post Type: recipe
     */
 ?>
+
+<?php get_header(); ?>
 
 
 <main>

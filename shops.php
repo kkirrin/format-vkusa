@@ -4,6 +4,9 @@
     */
 ?>
 
+<?php get_header(); ?>
+
+
 <main>
     <section id="shops">
         <div class="container relative">

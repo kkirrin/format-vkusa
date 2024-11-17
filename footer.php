@@ -199,13 +199,54 @@
     </div>
 </section>
 
+
+<!-- ОКНО РЕГИСТРАЦИЯ -->
+<section id="popup2" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <button class="popup__btn close-popup" aria-label="Закрыть" tabindex="4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none">
+                    <path d="M4 1.45508L19.9099 17.365" stroke="#333" />
+                    <path d="M4.54492 16.9099L20.4548 1.00001" stroke="#333" />
+                </svg>
+            </button>
+            <h2 class="text-start text-dark-green z-10  md:text-4xl text-xl pb-7 font-bold">Регистрация</h2>
+            <?php echo do_shortcode('[ultimatemember form_id="21"]'); ?>
+            <a href="/login">У меня уже есть аккаунт</a>
+        </div>
+    </div>
+</section>
+
+<!-- ОКНО РЕГИСТРАЦИЯ -->
+<section id="popup3" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <button class="popup__btn close-popup" aria-label="Закрыть" tabindex="4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none">
+                    <path d="M4 1.45508L19.9099 17.365" stroke="#333" />
+                    <path d="M4.54492 16.9099L20.4548 1.00001" stroke="#333" />
+                </svg>
+            </button>
+
+            <h2 class="text-start text-dark-green z-10  md:text-4xl text-xl pb-7 font-bold">Авторизация</h2>
+
+
+            <?php echo do_shortcode('[ultimatemember form_id="22"]'); ?>
+
+
+            <a href="/password-reset">Забыли пароль?</a>
+            <a href="/register">Регистрация</a>
+        </div>
+    </div>
+</section>
+
 <script src="<?php echo get_template_directory_uri(); ?>/assets/main.js"></script>
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/baguettebox.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/scroll-animation.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/smoothscroll.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/swiper-bundle.min.js"></script>
-
+<script src="<?php echo get_template_directory_uri(); ?>/assets/custom-cart.js"></script>
 
 </body>
 
